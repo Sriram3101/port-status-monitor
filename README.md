@@ -24,43 +24,26 @@ Design and implement an SDN-based Port Status Monitoring Tool using Mininet and 
 
 ## Setup & Execution Steps
 
-### Prerequisites
-- Ubuntu 20.04 / 22.04 (VM or native)
-- Mininet installed
-- Ryu SDN framework installed
 
-### Step 1 – Install dependencies
-```bash
-sudo apt update && sudo apt upgrade -y
-sudo apt install mininet -y
-pip3 install ryu --break-system-packages
-```
-
-### Step 2 – Clone this repository
-```bash
-git clone https://github.com/YOUR_USERNAME/port-status-monitor.git
-cd port-status-monitor
-```
-
-### Step 3 – Start the Ryu controller (Terminal 1)
+### Step 1 – Start the Ryu controller (Terminal 1)
 ```bash
 ryu-manager port_monitor.py --observe-links
 ```
 Keep this terminal open. All alerts and the port status table appear here.
 
-### Step 4 – Start the Mininet topology (Terminal 2)
+### Step 2 – Start the Mininet topology (Terminal 2)
 ```bash
 sudo python3 topology.py
 ```
 This creates 1 switch (s1) and 4 hosts (h1–h4) and connects to the Ryu controller.
 
-### Step 5 – Test connectivity (inside Mininet CLI)
+### Step 3 – Test connectivity (inside Mininet CLI)
 ```
 mininet> pingall
 ```
 Expected: 0% packet loss
 
-### Step 6 – Run test scenarios (Terminal 3)
+### Step 4 – Run test scenarios (Terminal 3)
 ```bash
 sudo python3 test_scenarios.py
 ```
@@ -74,13 +57,13 @@ sudo ip link set s1-eth1 down
 sudo ip link set s1-eth1 up
 ```
 
-### Step 7 – View flow tables
+### Step 5 – View flow tables
 ```bash
 sudo ovs-ofctl -O OpenFlow13 dump-flows s1
 sudo ovs-ofctl -O OpenFlow13 dump-ports s1
 ```
 
-### Step 8 – View logs
+### Step 6 – View logs
 ```bash
 cat port_events.log
 ```
