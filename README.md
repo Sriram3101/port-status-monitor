@@ -168,8 +168,3 @@ Switches flood all unknown packets. No learning occurs. No flow rules are instal
 
 ---
 
-## References
-1. Ryu documentation – https://ryu.readthedocs.io/
-2. OpenFlow 1.3 spec – https://opennetworking.org/wp-content/uploads/2014/10/openflow-spec-v1.3.0.pdf
-3. Mininet walkthrough – https://mininet.org/walkthrough/
-4. OVS documentation – https://docs.openvswitch.org/
